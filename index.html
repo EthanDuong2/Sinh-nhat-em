@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sinh nhật Qiu Mỹ Hân</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="balloons" aria-hidden="true" id="balloons"></div>
+
+<div class="bunting" aria-hidden="true">
+  <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+</div>
+
+<main class="page">
+  <!-- Thay ảnh: đặt file ảnh của Mỹ Hân cạnh index.html và đặt tên là photo.jpg -->
+  <figure class="photo" id="photo" data-mood="sad">
+    <div class="photo-ring">
+      <div class="photo-clip">
+        <img id="photo-img" src="photo.jpg" alt="PIC">
+        <div class="photo-ph" aria-hidden="true">Ảnh của<br>Mỹ Hân</div>
+      </div>
+    </div>
+    <svg class="hat" viewBox="0 0 80 90" aria-hidden="true">
+      <path class="hat-body" d="M10 82 L42 6 L74 82 Z"/>
+      <path class="hat-stripe" d="M22 56 L58 62 M30 36 L52 42"/>
+      <circle class="hat-pom" cx="42" cy="6" r="7"/>
+    </svg>
+    <span class="age" aria-hidden="true">22</span>
+  </figure>
+
+  <section class="stage" id="ask">
+    <h1 id="headline">Sinh nhật <span class="name" data-name></span></h1>
+    <p class="sub">Tụi teo mở tiệc mừng sinh nhật 22 tuổi. Tụi bây đến chung vui nhaa</p>
+    <p class="caption" id="caption" aria-live="polite"></p>
+    <div class="choices" id="choices">
+      <button class="btn btn-yes" id="yes" type="button">Tao đến nè 🎉</button>
+      <button class="btn btn-no" id="no" type="button">Tao bận rồi 😅</button>
+    </div>
+    <div class="meter">
+      <div class="meter-top"><span>Mức độ bể kèo </span><span id="meter-num">0%</span></div>
+      <div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Độ hụt hẫng" id="meter"><div class="meter-fill" id="meter-fill"></div></div>
+    </div>
+  </section>
+
+  <section class="answer" id="answer" hidden>
+    <h2>Hẹn gặp mài ở tiệc nha!</h2>
+    <article class="card">
+      <h3>Thiệp mời sinh nhật 22 tuổi của <span data-name></span></h3>
+      <div class="when">
+        <div class="when-day" id="when-day"></div>
+        <div class="when-sub" id="countdown"></div>
+      </div>
+      <dl class="details" id="details"></dl>
+      <p class="note" id="note"></p>
+    </article>
+    <article class="card">
+      <h3>Báo cho tụi tao biết</h3>
+      <div class="field">
+        <label for="guest">Tên mài</label>
+        <input id="guest" type="text" autocomplete="name" placeholder="Ví dụ: So Le Trong">
+      </div>
+      <div class="field">
+        <label for="msg">Tin nhắn xác nhận</label>
+        <textarea id="msg" rows="3" readonly></textarea>
+      </div>
+      <button class="btn btn-copy" id="copy" type="button">Copy tin nhắn</button>
+      <p class="status" id="status" aria-live="polite"></p>
+      <p class="note" id="rsvp-hint"></p>
+    </article>
+    <button class="linkish" id="replay" type="button">Xem lại từ đầu</button>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
