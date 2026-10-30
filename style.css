@@ -1,4 +1,3 @@
-/* Layout: one centered column under a bunting garland. Her photo sits in a rainbow ring with a party hat and a "22" badge; the RSVP dare (dodging button) swaps for the invitation card. */
 :root {
   --bg: #FFF3FA;
   --surface: #FFFFFF;
@@ -196,7 +195,6 @@ h3 {
 .meter-track { height: .6rem; border-radius: 999px; background: var(--line); overflow: hidden; }
 .meter-fill { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg, var(--teal), var(--yellow), var(--pink)); transition: width .4s; }
 
-/* Invitation */
 .card {
   width: 100%; box-sizing: border-box; min-width: 0;
   background: var(--surface); border: 2px solid var(--line); border-radius: 1.25rem;
@@ -250,14 +248,12 @@ h3 {
 }
 
 
-/* Global typography */
 body {
   font-family: var(--font-body);
   font-weight: 600;
   line-height: 1.6;
 }
 
-/* Birthday headings */
 h1, h2, h3 {
   font-family: var(--font-display);
   font-weight: 800;
@@ -266,7 +262,6 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 
-/* Main birthday title */
 h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
@@ -275,7 +270,6 @@ h1 {
   color: var(--pink);
 }
 
-/* Invitation card title */
 .card h3 {
   font-size: 1.55rem;
   font-weight: 700;
@@ -283,27 +277,23 @@ h1 {
   line-height: 1.4;
 }
 
-/* Birthday date */
 .when-day {
   font-family: var(--font-display);
   font-weight: 800;
   line-height: 1.3;
 }
 
-/* Buttons */
 button, .btn {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0;
 }
 
-/* Invitation details */
 .details, .note, .sub, .caption,
 .when-sub, input, textarea, label {
   font-family: var(--font-body);
 }
 
-/* Mobile typography */
 @media (max-width: 600px) {
   h1 {
     font-size: 2.3rem;

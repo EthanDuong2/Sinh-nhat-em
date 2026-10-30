@@ -37,13 +37,11 @@
   document.querySelectorAll("[data-name]").forEach(function (el) { el.textContent = CONFIG.name; });
   document.title = "Sinh nhật " + CONFIG.name;
 
-  // Ảnh: nếu chưa có photo.jpg thì hiện khung giữ chỗ
   var img = $("photo-img");
   function noPhoto() { photo.classList.add("no-photo"); }
   img.addEventListener("error", noPhoto);
   if (img.complete && img.naturalWidth === 0) noPhoto();
 
-  // Bóng bay nền
   var balloons = $("balloons");
   for (var i = 0; i < 9; i++) {
     var b = document.createElement("span");
@@ -138,7 +136,6 @@
     window.scrollTo(0, 0);
   }
 
-  // Thiệp mời
   function pad2(n) { return n < 10 ? "0" + n : String(n); }
   var dt = new Date(CONFIG.date.y, CONFIG.date.m - 1, CONFIG.date.d);
   var days = ["Chủ nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"];
@@ -163,7 +160,6 @@
   });
   $("note").textContent = CONFIG.note;
 
-  // Tin nhắn xác nhận
   var msg = $("msg"), guest = $("guest");
   function buildMsg() {
     var name = guest.value.trim();
