@@ -1,6 +1,6 @@
 (function () {
   var CONFIG = {
-    name: "Qiu Mỹ Hân",
+    name: "Hân Qiu",
     host: "Hai",
     age: 22,
     date: { y: 2026, m: 11, d: 21 },
@@ -11,7 +11,7 @@
     note: "Giờ giấc và địa điểm đang chốt. Chốt xong là tụi tao báo liền, nhớ chừa ngày 21/11 nha.",
     max: 5,
     captions: [
-      "Tao dới Hai đang ngóng mài đó.",
+      "Mời ae tới chung dui nhá",
       "Ơ, bận cái đíu.",
       "Bận gì mà bận. 22 tuổi mới có một lần thôi đấy.",
       "Tao buồn nha",

@@ -13,8 +13,9 @@
   --teal: #12B5A3;
   --violet: #6B3FD8;
   --focus: #2B0F3F;
-  --font-display: "Fredoka", "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-display: 'Baloo 2', cursive;
+  --font-body: 'Nunito', sans-serif;
+
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -247,3 +248,69 @@ h3 {
   .photo.hop { animation: none; }
   .btn-no, .meter-fill, .btn-yes, .photo-clip { transition: none; }
 }
+
+
+/* Global typography */
+body {
+  font-family: var(--font-body);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Birthday headings */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-wrap: balance;
+}
+
+/* Main birthday title */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.name {
+  color: var(--pink);
+}
+
+/* Invitation card title */
+.card h3 {
+  font-size: 1.55rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Birthday date */
+.when-day {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* Buttons */
+button, .btn {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Invitation details */
+.details, .note, .sub, .caption,
+.when-sub, input, textarea, label {
+  font-family: var(--font-body);
+}
+
+/* Mobile typography */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  .card h3 {
+    font-size: 1.3rem;
+  }
+}
+
