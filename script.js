@@ -13,9 +13,9 @@
       "Mời ae tới chung dui nhá",
       "Đừng coai",
       "Đừng coai",
-      "Đừng coai",
-      "Đừng coai",
-      "Cay liền con. T hỏi lần nữa thôi nha."
+      "Cay liền con",
+      "Cay liền con",
+      "T hỏi lần nữa thôi nha."
     ],
     noLabels: [
       "Tao bận rồi",
