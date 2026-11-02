@@ -250,7 +250,8 @@ no.style.maxWidth = "";
 no.style.transform = "";
 
 choices.style.minHeight = "";
-
+    no.style.transform = "";
+    photo.dataset.mood = "sad";
     $("answer").hidden = true;
     $("ask").hidden = false;
     $("status").textContent = "";
