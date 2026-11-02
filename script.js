@@ -34,7 +34,7 @@
   var fill = function (s) { return s.replace(/\{name\}/g, CONFIG.name); };
 
   document.querySelectorAll("[data-name]").forEach(function (el) { el.textContent = CONFIG.name; });
-  document.title = "Sinh nhật " + CONFIG.name;
+  document.title = "Invitation"
 
   var img = $("photo-img");
   function noPhoto() { photo.classList.add("no-photo"); }
@@ -69,31 +69,87 @@
     return !(a.right < b.left || a.left > b.right || a.bottom < b.top || a.top > b.bottom);
   }
 
-  function dodge() {
-    var scale = Math.max(0.6, 1 - attempts * 0.08);
-    var w = no.offsetWidth * scale, h = no.offsetHeight * scale;
-    var c = choices.getBoundingClientRect();
-    var b = no.getBoundingClientRect();
-    var y = yes.getBoundingClientRect();
-    var pad = 4, left, top, tries = 0, box;
-    do {
-      left = c.left + pad + Math.random() * Math.max(0, c.width - w - pad * 2);
-      top = c.top + pad + Math.random() * Math.max(0, c.height - h - pad * 2);
-      box = { left: left - 6, top: top - 6, right: left + w + 6, bottom: top + h + 6 };
-      tries++;
-    } while (intersects(box, y) && tries < 12);
-    tx += left - b.left;
-    ty += top - b.top;
-    no.style.transform = "translate(" + tx.toFixed(1) + "px," + ty.toFixed(1) + "px) scale(" + scale.toFixed(2) + ")";
-  }
+  
+function dodge() {
+  // Keep the No button inside the choices container
+  const padding = 12;
+  const gap = 20;
 
-  function bump() {
-    if (done || attempts >= CONFIG.max) return;
-    attempts++;
-    render();
-    if (attempts < CONFIG.max) dodge();
-    else no.style.transform = no.style.transform.replace(/scale\([^)]*\)/, "scale(1)");
+  // Use absolute positioning for the moving button
+  no.style.position = "absolute";
+  no.style.transform = "none";
+
+  // Limit button width, including long messages
+  const containerWidth = choices.clientWidth;
+
+  const buttonWidth = Math.min(
+    270,
+    Math.max(1, containerWidth - padding * 2)
+  );
+
+  no.style.width = buttonWidth + "px";
+  no.style.maxWidth = "100%";
+
+  // Measure positions after changing the layout
+  const containerRect = choices.getBoundingClientRect();
+  const yesRect = yes.getBoundingClientRect();
+
+  const noWidth = no.offsetWidth;
+  const noHeight = no.offsetHeight;
+
+  // The No button must always stay BELOW the Yes button
+  const minTop =
+    yesRect.bottom - containerRect.top + gap;
+
+  // Make the container tall enough for both buttons
+  const requiredHeight =
+    minTop + noHeight + padding + 50;
+
+  choices.style.minHeight =
+    Math.max(
+      window.innerWidth <= 600 ? 304 : 256,
+      requiredHeight
+    ) + "px";
+
+  // Calculate safe horizontal movement
+  const minLeft = padding;
+
+  const maxLeft = Math.max(
+    minLeft,
+    choices.clientWidth - noWidth - padding
+  );
+
+  // Calculate safe vertical movement
+  const maxTop = Math.max(
+    minTop,
+    choices.clientHeight - noHeight - padding
+  );
+
+  // Generate a position that cannot overlap the Yes button
+  const left =
+    minLeft + Math.random() * (maxLeft - minLeft);
+
+  const top =
+    minTop + Math.random() * (maxTop - minTop);
+
+  // Move the button to its new safe position
+  no.style.left = left.toFixed(1) + "px";
+  no.style.top = top.toFixed(1) + "px";
+}
+
+
+  
+function bump() {
+  if (done || attempts >= CONFIG.max) return;
+
+  attempts++;
+  render();
+
+  if (attempts < CONFIG.max) {
+    dodge();
   }
+}
+
 
   no.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") bump(); });
   no.addEventListener("click", function () { if (attempts >= CONFIG.max) accept(); else bump(); });
@@ -182,9 +238,19 @@
   msg.addEventListener("focus", function () { msg.select(); });
 
   $("replay").addEventListener("click", function () {
-    done = false; attempts = 0; tx = 0; ty = 0;
-    no.style.transform = "";
-    photo.dataset.mood = "sad";
+  
+done = false;
+attempts = 0;
+
+no.style.position = "";
+no.style.left = "";
+no.style.top = "";
+no.style.width = "";
+no.style.maxWidth = "";
+no.style.transform = "";
+
+choices.style.minHeight = "";
+
     $("answer").hidden = true;
     $("ask").hidden = false;
     $("status").textContent = "";
