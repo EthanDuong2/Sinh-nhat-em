@@ -61,7 +61,7 @@
     $("meter-num").textContent = pct + "%";
     $("meter-fill").style.width = pct + "%";
     $("meter").setAttribute("aria-valuenow", String(pct));
-    yes.style.fontSize = (1 + attempts * 0.07).toFixed(2) + "rem";
+    yes.style.fontSize = (1.3 + attempts * 0.05).toFixed(2) + "rem";
     yes.style.padding = (0.9 + attempts * 0.06).toFixed(2) + "rem " + (1.4 + attempts * 0.1).toFixed(2) + "rem";
   }
 
