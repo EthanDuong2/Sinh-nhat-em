@@ -15,15 +15,15 @@
       "Đừng coai",
       "Đừng coai",
       "Đừng coai",
-      "Cay liền con"
+      "Cay liền con. T hỏi lần nữa thôi nha."
     ],
     noLabels: [
       "Tao bận rồi",
-      "Tao xin lỗi nha Hân...",
+      "Tao nói này đừng giận nha Hui...",
       "Má khó mày ơi",
-      "Tao bận về Bình Dương thăm nhà",
+      "Má 3 tuần rồi chưa về BD",
       "Tao mắc đi bida rùi",
-      "Thôi được ròi, Tao đi"
+      "Tao đến nè"
     ]
   };
 
