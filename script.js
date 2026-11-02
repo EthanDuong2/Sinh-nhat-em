@@ -4,7 +4,7 @@
     host: "Hai",
     age: 22,
     date: { y: 2026, m: 11, d: 14 },
-    time: "7:00 PM",
+    time: "7:30 PM",
     place: "Làng Khét",
     dress: "72 Hẻm 496 Dương Quảng Hàm, An Nhơn, Hồ Chí Minh, Vietnam",
     escaperoom: "Bể nha",
