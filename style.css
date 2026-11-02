@@ -304,3 +304,14 @@ button, .btn {
   }
 }
 
+
+/* Birthday choice buttons ONLY */
+#yes,
+#no {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
