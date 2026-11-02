@@ -11,9 +11,9 @@
     max: 5,
     captions: [
       "Mời ae tới chung dui nhá",
-      "Ơ, bận cái đíu.",
-      "Bận gì mà bận. 22 tuổi mới có một lần thôi đấy.",
-      "Tao buồn nha",
+      "Đừng coai",
+      "Đừng coai",
+      "Đừng coai",
       "Đừng coai",
       "Cay liền con"
     ],
